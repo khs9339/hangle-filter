@@ -7,6 +7,21 @@ type Tbrands = {
 const brands: Tbrands[] = [
   {
     brandSeq: 177,
+    brand: "!@#$%^&",
+    brandSynonyms: [],
+  },
+  {
+    brandSeq: 177,
+    brand: "捍門",
+    brandSynonyms: [],
+  },
+  {
+    brandSeq: 177,
+    brand: "(주) 위메프",
+    brandSynonyms: [],
+  },
+  {
+    brandSeq: 177,
     brand: "able",
     brandSynonyms: ["KAKAO FRIENDS"],
   },

@@ -7,10 +7,11 @@
         placeholder="Please input"
         v-model="textarea"
         autosize="true"
+        @change="change"
       >
       </el-input>
     </el-col>
-    <el-col :span="12"><Tree /></el-col>
+    <el-col :span="12"><Tree v-if="isTree" :datas="textarea" /></el-col>
   </el-row>
 </template>
 <script lang="ts">
@@ -23,12 +24,19 @@ export default {
   },
   setup(props: any, ctx: any): any {
     const textarea = ref<string[]>([]);
-
+    const isTree = ref<boolean>(true);
     textarea.value = brandLists.map(({ brand }) => brand);
 
-    provide("wordList", textarea.value);
+    const change = () => {
+      isTree.value = false;
+      setTimeout(() => {
+        isTree.value = true;
+      }, 1000);
+    };
     return {
       textarea,
+      change,
+      isTree,
     };
   },
 };
